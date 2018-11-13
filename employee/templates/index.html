@@ -1,0 +1,73 @@
+<html>
+<head>  
+    <title>Index</title>  
+    {% load staticfiles %}  
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>  
+</head>  
+<body>  
+<form method="POST" class="post-form" action="/emp" enctype="Multipart/form-data"> 
+        {% csrf_token %}  
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Employee Image</label>
+      <div class="col-sm-4">
+        {{ form.eimage }}
+        
+      </div>
+      </div>
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>Enter Details</h3>  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Employee Id:</label>  
+    <div class="col-sm-4">  
+      {{ form.eid }}    <!--it gives us a text box.. without even usung text box -->
+    </div>  
+  </div>  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Employee Name:</label>  
+    <div class="col-sm-4">  
+      {{ form.ename }}  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Employee Email:</label>  
+    <div class="col-sm-4">  
+      {{ form.eemail }}  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Employee Contact:</label>  
+    <div class="col-sm-4">  
+      {{ form.econtact }}  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-primary">Submit</button>  
+    </div>  
+  </div>  
+    </div>  
+</form>  
+  <form action="logout">
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-primary">Log Out</button>
+    </div> 
+  </form>
+
+  <form action="/show">
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-primary">Click here to show data</button>
+    </div> 
+  </form>  
+</body>  
+</html>  
